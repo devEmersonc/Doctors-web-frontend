@@ -51,6 +51,11 @@
         </div>
 
         <div class="form-group col-lg-8 mt-5">
+            <label for="reason">Motivo</label>
+            <input type="text" class="form-control" id="reason" name="reason" placeholder="Ingresa el motivo de tu mensaje" [(ngModel)]="message.reason">
+        </div>
+
+        <div class="form-group col-lg-8 mt-5">
             <label for="message">Mensaje</label>
             <div class="form-group col-lg-8">
                 <textarea name="message" id="message" cols="50" rows="7" [(ngModel)]="message.message"></textarea>

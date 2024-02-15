@@ -18,7 +18,7 @@
                   <tr *ngFor="let mess of user.messages">
                     <th>{{mess.firstname}} {{mess.lastname}}</th>
                     <td>{{mess.email}}</td>
-                    <td></td>
+                    <td>{{mess.reason}}</td>
                     <td>{{mess.createdAt | date:'dd - MMMM - yyyy'}}</td>
                     <td>
                         <a class="btn btn-primary" href="#">Ver mensaje</a>
