@@ -1,0 +1,53 @@
+<div class="bg-dark p-2">
+    <a class="d-flex text-decoration-none mt-1 align-items-center">
+        <span class="fs-4 d-none d-sm-inline">Panel de usuario</span>
+    </a>
+    <ul class="nav nav-pills flex-column mt-4">
+        <li class="nav-item py-2 py-sm-0">
+            <a [routerLink]="['/']" class="nav-link text-white">
+                <i class="fs-5 fa fa-house"></i><span class="fs-4 d-none ms-2 d-sm-inline">Inicio</span>
+            </a>
+        </li>
+        <li class="nav-item py-2 py-sm-0">
+            <a [routerLink]="['/profile', user.id]" class="nav-link text-white">
+                <i class="fa-solid fa-user"></i><span class="fs-4 d-none ms-2 d-sm-inline">Perfil</span>
+            </a>
+        </li>
+        <li class="nav-item py-2 py-sm-0">
+            <a [routerLink]="['/messages', user.id]" class="nav-link text-white">
+                <i class="fs-5 fa fa-message"></i><span class="fs-4 d-none ms-2 d-sm-inline">Mensajes</span>
+            </a>
+        </li>
+    </ul>
+</div>
+        
+
+
+<!--<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="bg-dark col-auto col-md-4 col-lg-3 min-vh-100 d-flex flex-column justify-content-between">
+            <div class="bg-dark p-2">
+                <a class="d-flex text-decoration-none mt-1 align-items-center">
+                    <span class="fs-4 d-none d-sm-inline">Panel de usuario</span>
+                </a>
+                <ul class="nav nav-pills flex-column mt-4">
+                    <li class="nav-item py-2 py-sm-0">
+                        <a [routerLink]="['/']" class="nav-link text-white">
+                            <i class="fs-5 fa fa-house"></i><span class="fs-4 d-none ms-2 d-sm-inline">Inicio</span>
+                        </a>
+                    </li>
+                    <li class="nav-item py-2 py-sm-0">
+                        <a [routerLink]="['/profile', user.id]" class="nav-link text-white">
+                            <i class="fa-solid fa-user"></i><span class="fs-4 d-none ms-2 d-sm-inline">Perfil</span>
+                        </a>
+                    </li>
+                    <li class="nav-item py-2 py-sm-0">
+                        <a href="" class="nav-link text-white">
+                            <i class="fs-5 fa fa-message"></i><span class="fs-4 d-none ms-2 d-sm-inline">Mensajes</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>-->

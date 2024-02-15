@@ -1,0 +1,69 @@
+<div class="container mt-5">
+    <div class="row  justify-content-center">
+        <div class="col-lg-8 bg">
+            <div class="row">
+                <div class="col-5 offset-2 bg-primary">
+                    <img class="mx-auto" src="http://localhost:8080/api/doctors/uploads/img/{{doctor.photo}}" alt="profile_picture" width="160px" height="160px">
+                </div>
+                <div class="col-4 bg-success">
+                    <ul class="text-white">
+                        <li>
+                           
+                            {{doctor.firstname}} {{doctor.lastname}}
+                        </li>
+                        <li>
+                            <img src="../../../../assets/email.png" width="20px" height="20px" alt="email.icon">
+                            {{doctor.email}}
+                        </li>                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-4 text-center">
+        <div class="col-lg-8 bg">
+            <h1>#{{doctor.specialty.name}}</h1>
+        </div>
+    </div>
+
+    <ul class="alert alert-danger" *ngIf="errors?.length">
+        <li *ngFor="let error of errors">{{error}}</li>
+    </ul>
+    
+
+    <form class="row col-lg-8 mt-5 bg offset-2" *ngIf="login.isLoggedIn()">
+        <fieldset class="mt-4">
+            <legend>Mensaje</legend>
+        </fieldset>
+        <div class="form-group col-lg-8 mt-2">
+            <label for="firstname">Nombre:</label>
+            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Ingresa tu nombre" [(ngModel)]="message.firstname">
+        </div>
+
+        <div class="form-group col-lg-8 mt-5">
+            <label for="lastname">Apellido</label>
+            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Ingresa tu apellido" [(ngModel)]="message.lastname">
+        </div>
+
+        <div class="form-group col-lg-8 mt-5">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Ingresa tu correo electrónico" [(ngModel)]="message.email">
+        </div>
+
+        <div class="form-group col-lg-8 mt-5">
+            <label for="message">Mensaje</label>
+            <div class="form-group col-lg-8">
+                <textarea name="message" id="message" cols="50" rows="7" [(ngModel)]="message.message"></textarea>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5 mb-3">
+            <button class="btn btn-primary col-2" (click)="saveFormMessage()">Enviar</button>
+        </div>
+    </form>
+
+    <div *ngIf="!login.isLoggedIn()">registrate o inicia sesiom</div>
+</div>
+
+
+
+<!--<img class="mx-auto" src="http://localhost:8080/api/doctors/uploads/img/{{doctor.photo}}" alt="profile_picture" width="160px" height="160px">-->

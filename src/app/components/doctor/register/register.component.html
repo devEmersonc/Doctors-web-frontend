@@ -1,0 +1,54 @@
+<ul class="alert alert-danger" *ngIf="errors?.length">
+    <li *ngFor="let error of errors">{{error}}</li>
+</ul>
+
+<div class="card bg-white text-dark w-50 mx-auto mt-5">
+    <div class="card-header bg-light">Registro</div>
+    <div class="card-body">
+        <form>
+            <div class="form-group row mt-4 mx-auto">
+                <label for="nombre" class="col-form-label col-sm-4 col-md-4">Nombre</label>
+                <div class="col-sm-12 col-md-8">
+                    <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)]="doctor.firstname">
+                </div>
+            </div>
+
+            <div class="form-group row mt-4 mx-auto">
+                <label for="apellido" class="col-form-label col-sm-4 col-md-4">Apellido</label>
+                <div class="col-sm-12 col-md-8">
+                    <input type="text" id="apellido" name="apellido" class="form-control" [(ngModel)]="doctor.lastname">
+                </div>
+            </div>
+        
+            <div class="form-group row mt-4 mx-auto">
+                <label for="email" class="col-form-label col-sm-4 col-md-4">Email</label>
+                <div class="col-sm-12 col-md-8">
+                    <input type="text" id="email" name="email" class="form-control" [(ngModel)]="doctor.email">
+                </div>
+            </div>
+        
+            <div class="form-group row mt-4 mx-auto">
+                <label for="contrasena" class="col-form-label col-sm-4 col-md-4">Contraseña</label>
+                <div class="col-sm-12 col-md-8">
+                    <input type="password" id="contrasena" name="contrasena" class="form-control" [(ngModel)]="doctor.password">
+                </div>
+            </div>
+    
+
+            <div class="form-group row mt-4 mx-auto">
+                <label for="specialty" class="col-form-label col-sm-2">Especialización</label>
+                <div class="col-sm-6">
+                    <select type="specialty" class="form-control" id="specialty" name="specialty" [(ngModel)]="doctor.specialty">
+                        <option *ngFor="let specialty of specialties" [ngValue]="specialty">{{specialty.name}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row mt-4 justify-content-center">
+                <div class="c">
+                    <button class="btn btn-primary mx-auto d-block" (click)="registerDoctor()">Registrar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
