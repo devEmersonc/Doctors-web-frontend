@@ -44,7 +44,7 @@ export class DashBoardComponent implements OnInit{
     this.thisDoctor.email = this.doctor.email;
     this.thisDoctor.specialty = this.doctor.specialty;
 
-    this.doctorService.updateDoctor(this.thisDoctor).subscribe({
+    this.doctorService.updateUser(this.thisDoctor).subscribe({
       next: (json) => {
         window.location.reload();
         Swal.fire({
@@ -60,24 +60,5 @@ export class DashBoardComponent implements OnInit{
         this.errors = err.error.errors as string[];
       }
     })
-  }
-
-  selectImage(event: any){
-    this.image = event.target.files[0];
-    if(this.image.type.indexOf('image') < 0){
-      Swal.fire("Error: ", "La imagen debe ser tipo jpg o png", "error");
-      this.image = null;
-    }
-  }
-
-  uploadImage(){
-    if(!this.image){
-      Swal.fire("Error", "Debe seleccionar una imagen", "error");
-    }else{
-      this.doctorService.uploadImage(this.image, this.doctor.id).subscribe(doctor => {
-        this.doctor = doctor;
-        Swal.fire("Foto de perfil actualizada", "success");
-      })
-    }
   }
 }

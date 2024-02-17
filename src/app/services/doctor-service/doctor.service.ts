@@ -36,8 +36,8 @@ export class DoctorService {
     )
   }
 
-  updateDoctor(doctor:User): Observable<any>{
-    return this.http.put<any>(`${this.baseUrl}/${doctor.id}`, doctor).pipe(
+  updateUser(user:User): Observable<any>{
+    return this.http.put<any>(`${this.baseUrl}/${user.id}`, user).pipe(
       catchError(e => {
         if(e.status == 400){
           Swal.fire(e.error.message, e.error.error, "error");
