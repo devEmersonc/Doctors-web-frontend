@@ -12,6 +12,7 @@ import { FormRegisterComponent } from './components/form-register/form-register.
 import { RegisterPatientComponent } from './components/patient/register-patient/register-patient.component';
 import { patientGuard } from './services/patient-service/patient.guard';
 import { PatientDashboardComponent } from './components/patient/patient-dashboard/patient-dashboard.component';
+import { ProfilePatientComponent } from './components/patient/profile-patient/profile-patient.component';
 
 const routes: Routes = [
   {path: "", component: InicioComponent, pathMatch:"full"},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: "dashboard-patient/:id", component: PatientDashboardComponent, canActivate: [patientGuard]},
   {path: "doctors-details-doctor/:id/:string/:string", component: DoctorsDetailsComponent},
   {path: "profile/:id", component: ProfileDoctorComponent},
+  {path: "profile/patient/:id", component: ProfilePatientComponent},
   {path: "messages/:id", component: MessagesComponent},
   {path: "form-register", component: FormRegisterComponent},
   {path: "register-patient", component: RegisterPatientComponent},

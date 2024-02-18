@@ -6,14 +6,12 @@
                     <img class="mx-auto" src="http://localhost:8080/api/doctors/uploads/img/{{doctor.photo}}" alt="profile_picture" width="160px" height="160px">
                 </div>
                 <div class="col-4 bg-success">
-                    <ul class="text-white">
-                        <li>
-                           
-                            {{doctor.firstname}} {{doctor.lastname}}
+                    <ul class="">
+                        <li>                           
+                            <i class="fa-solid fa-user"></i><span class="text-white">{{doctor.firstname}} {{doctor.lastname}}</span>
                         </li>
                         <li>
-                            <img src="../../../../assets/email.png" width="20px" height="20px" alt="email.icon">
-                            {{doctor.email}}
+                            <i class="fa-sharp fa-solid fa-envelope"></i><span class="text-white">{{doctor.email}}</span> 
                         </li>                        
                     </ul>
                 </div>

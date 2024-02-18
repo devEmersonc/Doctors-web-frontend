@@ -2,34 +2,44 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/auth-service/auth.service';
-import { DoctorService } from 'src/app/services/doctor-service/doctor.service';
+import { PatientService } from 'src/app/services/patient-service/patient.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-profile-doctor',
-  templateUrl: './profile-doctor.component.html',
-  styleUrls: ['./profile-doctor.component.css']
+  selector: 'app-profile-patient',
+  templateUrl: './profile-patient.component.html',
+  styleUrls: ['./profile-patient.component.css']
 })
-export class ProfileDoctorComponent implements OnInit{
+export class ProfilePatientComponent implements OnInit{
 
   user:User = new User();
-  thisuser:User = new User();
+  thisUser:User = new User();
   errors:string[];
   selectedImage: File | any = null;
 
-  constructor(private doctorService: DoctorService, private route: ActivatedRoute, public login: AuthService, private router:Router){}
+  constructor(private patientService: PatientService, public auth: AuthService, private route: ActivatedRoute, private router: Router){}
 
   ngOnInit(): void {
-    this.getUser();
-    console.log(this.user.id)
-  }
 
-  getUser(){
-    if(this.login.isLoggedIn()){
+    if(this.auth.isLoggedIn()){
       this.route.paramMap.subscribe(params => {
         let id:number = Number(params.get('id'));
         if(id){
-          this.doctorService.getDoctor(id).subscribe(user => {
+          this.patientService.getPatient(id).subscribe(user => {
+            this.user = user;
+          })
+        }
+      })
+    }
+    this.getUser();
+  }
+
+  getUser(){
+    if(this.auth.isLoggedIn()){
+      this.route.paramMap.subscribe(params => {
+        let id:number = Number(params.get('id'));
+        if(id){
+          this.patientService.getPatient(id).subscribe(user => {
             this.user = user;
           })
         }
@@ -38,16 +48,14 @@ export class ProfileDoctorComponent implements OnInit{
   }
 
   updateUser(){
-    this.thisuser.id = this.user.id;
-    this.thisuser.firstname = this.user.firstname;
-    this.thisuser.lastname = this.user.lastname;
-    this.thisuser.email = this.user.email;
-    this.thisuser.photo = this.user.photo;
-    this.thisuser.specialty = this.user.specialty;
+    this.thisUser.id = this.user.id;
+    this.thisUser.firstname = this.user.firstname;
+    this.thisUser.lastname = this.user.lastname;
+    this.thisUser.email = this.user.email;
 
-    this.doctorService.updateUser(this.thisuser).subscribe({
+    this.patientService.updatePatient(this.thisUser).subscribe({
       next: (json) => {
-        this.router.navigate(['/profile', this.user.id])
+        this.router.navigate(['/profile/patient', this.thisUser.id]);
         this.getUser();
         Swal.fire({
           position: "center",
@@ -63,10 +71,10 @@ export class ProfileDoctorComponent implements OnInit{
     })
   }
 
-  selectImage(event: any){
+  selectImage(event:any){
     this.selectedImage = event.target.files[0];
     if(this.selectedImage.type.indexOf('image') < 0){
-      Swal.fire("Error: ", "La imagen debe ser tipo jpg o png", "error");
+      Swal.fire("Error", "La imagen debe ser tipo jpg o png", "error");
       this.selectedImage = null;
     }
   }
@@ -75,8 +83,8 @@ export class ProfileDoctorComponent implements OnInit{
     if(!this.selectedImage){
       Swal.fire("Error", "Debe seleccionar una imagen", "error");
     }else{
-      this.doctorService.uploadImage(this.selectedImage, this.user.id).subscribe(user => {
-        this.router.navigate(['/profile', this.user.id])
+      this.patientService.uploadImage(this.selectedImage, this.user.id).subscribe(user => {
+        this.router.navigate(['/profile/patient', this.user.id])
         this.getUser();
         Swal.fire({
           position: "center",

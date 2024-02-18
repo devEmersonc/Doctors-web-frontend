@@ -22,6 +22,7 @@ import localEs from '@angular/common/locales/es-CL';
 import { FormRegisterComponent } from './components/form-register/form-register.component';
 import { RegisterPatientComponent } from './components/patient/register-patient/register-patient.component';
 import { PatientDashboardComponent } from './components/patient/patient-dashboard/patient-dashboard.component';
+import { ProfilePatientComponent } from './components/patient/profile-patient/profile-patient.component';
 
 registerLocaleData(localEs, "es-CL");
 
@@ -41,7 +42,8 @@ registerLocaleData(localEs, "es-CL");
     MessagesComponent,
     FormRegisterComponent,
     RegisterPatientComponent,
-    PatientDashboardComponent
+    PatientDashboardComponent,
+    ProfilePatientComponent
   ],
   imports: [
     BrowserModule,

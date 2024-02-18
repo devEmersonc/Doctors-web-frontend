@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/models/user';
+import { AuthService } from 'src/app/services/auth-service/auth.service';
 import { DoctorService } from 'src/app/services/doctor-service/doctor.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class SidenavComponent implements OnInit{
 
   user: User = new User();
 
-  constructor(private doctorService: DoctorService, private route: ActivatedRoute){}
+  constructor(private doctorService: DoctorService, private route: ActivatedRoute, public login: AuthService){}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
