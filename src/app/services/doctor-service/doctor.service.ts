@@ -19,6 +19,10 @@ export class DoctorService {
     return this.http.get<User[]>(`${this.baseUrl}`);
   }
 
+  getDoctorsPages(page:number): Observable<any>{
+    return this.http.get<any>(`${this.baseUrl + /page/ + page}`);
+  }
+
   getDoctor(id:number): Observable<User>{
     return this.http.get<User>(`${this.baseUrl}/${id}`);
   }

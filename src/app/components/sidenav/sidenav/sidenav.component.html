@@ -1,58 +1,24 @@
-<div class="bg-dark p-2">
-    <a class="d-flex text-decoration-none mt-1 align-items-center">
-        <span class="fs-4 d-none d-sm-inline">Panel de usuario</span>
-    </a>
+<div class="p-2" style="background-color: #d3e6f7;">
     <ul class="nav nav-pills flex-column mt-4">
-        <li class="nav-item py-2 py-sm-0">
-            <a [routerLink]="['/']" class="nav-link text-white">
-                <i class="fs-5 fa fa-house"></i><span class="fs-4 d-none ms-2 d-sm-inline">Inicio</span>
+        <li class="nav-item py-2 py-sm-0 mt-2">
+            <a [routerLink]="['/']" class="nav-link">
+                <i class="fs-5 fa fa-house" style="color: #3b4146;"></i><span class="fs-4 d-none ms-2 d-sm-inline">Inicio</span>
             </a>
         </li>
-        <li class="nav-item py-2 py-sm-0"*ngIf="login.getUserRole() == 'ROLE_DOCTOR'" >
-            <a [routerLink]="['/profile', user.id]" class="nav-link text-white">
-                <i class="fa-solid fa-user"></i><span class="fs-4 d-none ms-2 d-sm-inline">Perfil</span>
+        <li class="nav-item py-2 py-sm-0 mt-2"*ngIf="login.getUserRole() == 'ROLE_DOCTOR'" >
+            <a [routerLink]="['/profile', user.id]" class="nav-link text-black">
+                <i class="fa-solid fa-user" style="color: #3b4146;"></i><span class="fs-4 d-none ms-3 d-sm-inline">Perfil</span>
             </a>
         </li>
-        <li class="nav-item py-2 py-sm-0"*ngIf="login.getUserRole() == 'ROLE_PATIENT'" >
-            <a [routerLink]="['/profile/patient/', user.id]" class="nav-link text-white">
-                <i class="fa-solid fa-user"></i><span class="fs-4 d-none ms-2 d-sm-inline">Perfil</span>
+        <li class="nav-item py-2 py-sm-0 mt-2"*ngIf="login.getUserRole() == 'ROLE_PATIENT'" >
+            <a [routerLink]="['/profile/patient/', user.id]" class="nav-link text-black">
+                <i class="fa-solid fa-user" style="color: #3b4146;"></i><span class="fs-4 d-none ms-2 d-sm-inline">Perfil</span>
             </a>
         </li>
-        <li class="nav-item py-2 py-sm-0" *ngIf="login.getUserRole() == 'ROLE_DOCTOR'">
-            <a [routerLink]="['/messages', user.id]" class="nav-link text-white">
-                <i class="fs-5 fa fa-message"></i><span class="fs-4 d-none ms-2 d-sm-inline">Mensajes</span>
+        <li class="nav-item py-2 py-sm-0 mt-2" *ngIf="login.getUserRole() == 'ROLE_DOCTOR'">
+            <a [routerLink]="['/messages', user.id]" class="nav-link text-black">
+                <i class="fs-5 fa fa-message" style="color: #3b4146;"></i><span class="fs-4 d-none ms-2 d-sm-inline">Mensajes</span>
             </a>
         </li>
     </ul>
 </div>
-        
-
-
-<!--<div class="container-fluid">
-    <div class="row flex-nowrap">
-        <div class="bg-dark col-auto col-md-4 col-lg-3 min-vh-100 d-flex flex-column justify-content-between">
-            <div class="bg-dark p-2">
-                <a class="d-flex text-decoration-none mt-1 align-items-center">
-                    <span class="fs-4 d-none d-sm-inline">Panel de usuario</span>
-                </a>
-                <ul class="nav nav-pills flex-column mt-4">
-                    <li class="nav-item py-2 py-sm-0">
-                        <a [routerLink]="['/']" class="nav-link text-white">
-                            <i class="fs-5 fa fa-house"></i><span class="fs-4 d-none ms-2 d-sm-inline">Inicio</span>
-                        </a>
-                    </li>
-                    <li class="nav-item py-2 py-sm-0">
-                        <a [routerLink]="['/profile', user.id]" class="nav-link text-white">
-                            <i class="fa-solid fa-user"></i><span class="fs-4 d-none ms-2 d-sm-inline">Perfil</span>
-                        </a>
-                    </li>
-                    <li class="nav-item py-2 py-sm-0">
-                        <a href="" class="nav-link text-white">
-                            <i class="fs-5 fa fa-message"></i><span class="fs-4 d-none ms-2 d-sm-inline">Mensajes</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>-->

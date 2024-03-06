@@ -15,7 +15,8 @@ export class RegisterComponent implements OnInit{
   doctor:User = new User();
   specialties:Specialty[];
   errors:string[];
-
+  sexes:string [] = ["Mujer", "Hombre"];
+  
   constructor(private doctorService: DoctorService, private router: Router){}
 
   ngOnInit(): void {

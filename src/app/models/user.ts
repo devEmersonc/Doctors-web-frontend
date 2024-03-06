@@ -7,7 +7,9 @@ export class User{
     lastname:string;
     email:string;
     password:string;
+    phone:string;
     photo:string;
+    sex:string;
     specialty:Specialty;
     messages: Message[] = [];
 }

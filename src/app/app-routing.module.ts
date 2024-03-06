@@ -13,6 +13,7 @@ import { RegisterPatientComponent } from './components/patient/register-patient/
 import { patientGuard } from './services/patient-service/patient.guard';
 import { PatientDashboardComponent } from './components/patient/patient-dashboard/patient-dashboard.component';
 import { ProfilePatientComponent } from './components/patient/profile-patient/profile-patient.component';
+import { ListDoctorsComponent } from './components/doctor/list-doctors/list-doctors.component';
 
 const routes: Routes = [
   {path: "", component: InicioComponent, pathMatch:"full"},
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: "messages/:id", component: MessagesComponent},
   {path: "form-register", component: FormRegisterComponent},
   {path: "register-patient", component: RegisterPatientComponent},
+  {path: "doctors", component: ListDoctorsComponent},
 ];
 
 @NgModule({

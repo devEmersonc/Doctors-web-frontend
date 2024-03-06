@@ -1,5 +1,6 @@
 .banner{
-    background-image: url('../../../assets/banner.png');
+    background-color: #d3e6f7;
+    background-image: url('../../../assets/test.png');
     background-repeat: no-repeat;
     background-size: cover;
     max-width: 100%;

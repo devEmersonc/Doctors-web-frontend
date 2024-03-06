@@ -42,7 +42,7 @@ export class DoctorsDetailsComponent implements OnInit{
         })
       },
       error: (err) => {
-        this.errors = err.error.errors as string[];
+        this.errors = err.error.errors as string[];   
       }
     })
   }

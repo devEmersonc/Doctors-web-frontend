@@ -23,6 +23,9 @@ import { FormRegisterComponent } from './components/form-register/form-register.
 import { RegisterPatientComponent } from './components/patient/register-patient/register-patient.component';
 import { PatientDashboardComponent } from './components/patient/patient-dashboard/patient-dashboard.component';
 import { ProfilePatientComponent } from './components/patient/profile-patient/profile-patient.component';
+import { ListDoctorsComponent } from './components/doctor/list-doctors/list-doctors.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './components/footer/footer.component';
 
 registerLocaleData(localEs, "es-CL");
 
@@ -43,13 +46,18 @@ registerLocaleData(localEs, "es-CL");
     FormRegisterComponent,
     RegisterPatientComponent,
     PatientDashboardComponent,
-    ProfilePatientComponent
+    ProfilePatientComponent,
+    ListDoctorsComponent,
+    FooterComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    
   ],
   providers: [
     {

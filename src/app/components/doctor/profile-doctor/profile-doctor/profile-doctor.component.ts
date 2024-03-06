@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/auth-service/auth.service';
@@ -21,7 +21,6 @@ export class ProfileDoctorComponent implements OnInit{
 
   ngOnInit(): void {
     this.getUser();
-    console.log(this.user.id)
   }
 
   getUser(){
