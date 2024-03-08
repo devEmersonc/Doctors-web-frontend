@@ -26,6 +26,7 @@ import { ProfilePatientComponent } from './components/patient/profile-patient/pr
 import { ListDoctorsComponent } from './components/doctor/list-doctors/list-doctors.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
 
 registerLocaleData(localEs, "es-CL");
 
@@ -48,7 +49,8 @@ registerLocaleData(localEs, "es-CL");
     PatientDashboardComponent,
     ProfilePatientComponent,
     ListDoctorsComponent,
-    FooterComponent
+    FooterComponent,
+    AboutusComponent
     
   ],
   imports: [

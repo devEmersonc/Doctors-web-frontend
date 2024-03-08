@@ -20,9 +20,9 @@ export class ListDoctorsComponent implements OnInit{
       for(var doc of this.doctors){
         if(doc.specialty != null){
           this.addDoctors.push(doc);
-          if(doc.sex == 'Mujer'){
-            doc.specialty.name = doc.specialty.name.substring(0, doc.specialty.name.length -1);
-            doc.specialty.name = doc.specialty.name.concat('a');
+          if(doc.sex == 'Femenino'){
+            doc.specialty = doc.specialty.substring(0, doc.specialty.length -1);
+            doc.specialty = doc.specialty.concat('a');
           }
         }
       }      

@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-sm-12 col-md-6 col-lg-6">
             <div class="card bg-white text-dark mx-auto mt-5 register">
-                <div class="card-header bg-light text-center">Registrar nuevo Especialista</div>
+                <div class="card-header bg text-center">Registro</div>
                 <div class="card-body">
                     <form>
                         <div class="form-group row mt-4 mx-auto">
@@ -43,24 +43,24 @@
                                 <input type="password" id="contrasena" name="contrasena" class="form-control" [(ngModel)]="doctor.password">
                             </div>
                         </div>
-
-
+                        
                         <div class="form-group row mt-4 mx-auto">
-                            <label for="sex" class="col-form-label col-md-12 col-lg-12 text-center">Sexo</label>
+                            <label for="sex" class="col-form-label col-md-12 col-lg-12 text-center">Género</label>
                             <div class="col-lg-12">
-                                <select type="sex" class="form-control" id="sex" name="sex" [(ngModel)]="doctor.sex">
-                                    <option *ngFor="let sex of sexes" [ngValue]="sex">{{sex}}</option>
-                                </select>
+                                <select class="form-select" id="sex" name="sex" aria-label="Default select example" [(ngModel)]="doctor.sex">
+                                    <option selected>Elige tu género...</option>
+                                    <option *ngFor="let sex of sexes" [ngValue]="sex">{{sex}}</option>                                    
+                                  </select>
                             </div>
                         </div>
-                
-            
+
                         <div class="form-group row mt-4 mx-auto">
-                            <label for="specialty" class="col-form-label col-md-12 col-lg-12 text-center">Especialización</label>
+                            <label for="s" class="col-form-label col-md-12 col-lg-12 text-center">Especialización</label>
                             <div class="col-lg-12">
-                                <select type="specialty" class="form-control" id="specialty" name="specialty" [(ngModel)]="doctor.specialty">
-                                    <option *ngFor="let specialty of specialties" [ngValue]="specialty">{{specialty.name}}</option>
-                                </select>
+                                <select class="form-select" id="s" name="s" aria-label="Default select example" [(ngModel)]="doctor.specialty">
+                                    <option selected>Elige tu especialización...</option>
+                                    <option *ngFor="let s of specialties" [ngValue]="s">{{s}}</option>                                    
+                                  </select>
                             </div>
                         </div>
             

@@ -14,6 +14,7 @@ import { patientGuard } from './services/patient-service/patient.guard';
 import { PatientDashboardComponent } from './components/patient/patient-dashboard/patient-dashboard.component';
 import { ProfilePatientComponent } from './components/patient/profile-patient/profile-patient.component';
 import { ListDoctorsComponent } from './components/doctor/list-doctors/list-doctors.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
 
 const routes: Routes = [
   {path: "", component: InicioComponent, pathMatch:"full"},
@@ -24,10 +25,11 @@ const routes: Routes = [
   {path: "doctors-details-doctor/:id/:string/:string", component: DoctorsDetailsComponent},
   {path: "profile/:id", component: ProfileDoctorComponent},
   {path: "profile/patient/:id", component: ProfilePatientComponent},
-  {path: "messages/:id", component: MessagesComponent},
+  {path: "messages/:id", component: MessagesComponent, canActivate: [doctorGuard]},
   {path: "form-register", component: FormRegisterComponent},
   {path: "register-patient", component: RegisterPatientComponent},
   {path: "doctors", component: ListDoctorsComponent},
+  {path: "about-us", component: AboutusComponent}
 ];
 
 @NgModule({

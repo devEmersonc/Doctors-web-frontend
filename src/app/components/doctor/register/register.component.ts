@@ -13,16 +13,14 @@ import Swal from 'sweetalert2';
 export class RegisterComponent implements OnInit{
 
   doctor:User = new User();
-  specialties:Specialty[];
   errors:string[];
-  sexes:string [] = ["Mujer", "Hombre"];
+  sexes:string [] = ["Masculino", "Femenino"];
+  specialties:string[] = ["Cardiólogo", "Ginecólogo", "Neurólogo", "Pediatra", "Radiólogo", "Dermatólogo", "Nutricionista", "Psicólogo", "kinesiólogo", "Fonoaudiólogo", "Dentista", "Oftalmólogo"];
   
   constructor(private doctorService: DoctorService, private router: Router){}
 
   ngOnInit(): void {
-    this.doctorService.getSpecialties().subscribe(specialties => {
-      this.specialties = specialties;
-    })
+
   }
 
   registerDoctor(){

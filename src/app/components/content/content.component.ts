@@ -22,7 +22,11 @@ export class ContentComponent implements OnInit{
       for(var doctor of this.doctors){
         if(doctor.specialty != null){
           if(doctor.email == 'daniela@gmail.com' || doctor.email == 'pedro@gmail.com' || doctor.email == 'antonia@gmail.com' || doctor.email == 'antonio@gmail.com' || doctor.email == 'jose@gmail.com' || doctor.email == 'maria@gmail.com' || doctor.email == 'francisco@gmail.com' || doctor.email == 'francisca@gmail.com' || doctor.email == 'andres@gmail.com'){
-            this.addDoctors.push(doctor); 
+            this.addDoctors.push(doctor);
+            if(doctor.sex == "Femenino"){
+              doctor.specialty = doctor.specialty.substring(0, doctor.specialty.length -1);
+              doctor.specialty = doctor.specialty.concat('a');
+            }
           }
         }
       }

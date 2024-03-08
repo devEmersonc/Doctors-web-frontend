@@ -10,6 +10,6 @@ export class User{
     phone:string;
     photo:string;
     sex:string;
-    specialty:Specialty;
+    specialty:string;
     messages: Message[] = [];
 }

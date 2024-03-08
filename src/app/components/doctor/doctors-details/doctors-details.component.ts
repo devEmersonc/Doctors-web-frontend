@@ -25,6 +25,10 @@ export class DoctorsDetailsComponent implements OnInit{
       if(id){
         this.doctorService.getDoctor(id).subscribe(doctor => {
           this.doctor = doctor;
+          if(doctor.sex == 'Femenino'){
+            doctor.specialty = doctor.specialty.substring(0, doctor.specialty.length -1);
+            doctor.specialty = doctor.specialty.concat('a');
+          }
         })
       }
     })
